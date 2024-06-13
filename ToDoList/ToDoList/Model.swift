@@ -8,7 +8,7 @@
 import Foundation
 
 struct ListModel: Codable {
-    
     let id: UUID
     let toDo: String
 }
+

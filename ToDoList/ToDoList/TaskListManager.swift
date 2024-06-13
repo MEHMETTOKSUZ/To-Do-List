@@ -8,47 +8,46 @@
 import Foundation
 
 class TaskListManager {
-    
     static let shared = TaskListManager()
     private let userDefaults = UserDefaults.standard
     private let listKey = "addToList"
-    var list: [ListModel] = []
+    private(set) var list: [ListModel] = []
     
-    init() {
-        if let data = userDefaults.data(forKey: listKey),
-           let favorites = try? JSONDecoder().decode([ListModel].self, from: data) {
-            list = favorites
-        }
+    private init() {
+        loadList()
     }
     
-    func toggleList(toDo: ListModel) {
-           loadFavorites()
-
-           if let index = list.firstIndex(where: { $0.id == toDo.id }) {
-               list[index] = toDo
-           } else {
-               list.append(toDo)
-           }
-           savedtoDo()
-       }
-   
-    func loadFavorites() {
-        if let data = userDefaults.data(forKey: listKey),
-           let favorite = try? JSONDecoder().decode([ListModel].self, from: data) {
-            self.list = favorite
-        }
+    func get() -> [ListModel] {
+        return list
     }
     
-    func removeFavorites(toDo: ListModel) {
-        if let index = list.firstIndex(where: {$0.id == toDo.id}) {
+    func add(toDo: ListModel) {
+        if let index = list.firstIndex(where: { $0.id == toDo.id }) {
+            list[index] = toDo
+        } else {
+            list.insert(toDo, at: 0)
+        }
+        saveList()
+    }
+    
+    func remove(toDo: ListModel) {
+        if let index = list.firstIndex(where: { $0.id == toDo.id }) {
             list.remove(at: index)
-            savedtoDo()
+            saveList()
         }
     }
     
-    func savedtoDo() {
-        if let encodeData = try? JSONEncoder().encode(list) {
-            userDefaults.set(encodeData, forKey: listKey)
+    private func loadList() {
+        if let data = userDefaults.data(forKey: listKey),
+           let savedList = try? JSONDecoder().decode([ListModel].self, from: data) {
+            list = savedList
+        }
+    }
+    
+    private func saveList() {
+        if let encodedData = try? JSONEncoder().encode(list) {
+            userDefaults.set(encodedData, forKey: listKey)
         }
     }
 }
+

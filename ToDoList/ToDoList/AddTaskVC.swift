@@ -24,7 +24,7 @@ class AddTaskVC: UIViewController {
         }
         
         let newTask = ListModel(id: UUID(), toDo: text)
-        TaskListManager.shared.toggleList(toDo: newTask)
+        TaskListManager.shared.add(toDo: newTask)
         navigationController?.popViewController(animated: true)
     }
 }

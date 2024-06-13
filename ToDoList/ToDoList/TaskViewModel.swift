@@ -8,35 +8,33 @@
 import Foundation
 
 class TaskViewModel {
-    
     var didFinishLoad: (() -> Void)?
-    var didFinishLoadWithError: ((String) -> Void)?
     var list: [TaskListCell.ViewModel] = []
+    private let taskManager = TaskListManager.shared
     
-    var numberOfInSection: Int {
+    var numberOfRows: Int {
         return list.count
     }
     
-    func getItem(at index: Int) -> TaskListCell.ViewModel {
+    func getItem(at index: Int) -> TaskListCell.ViewModel? {
+        guard index >= 0, index < list.count else {
+            return nil
+        }
         return list[index]
     }
     
     func loadList() {
-        if let data = UserDefaults.standard.data(forKey: "addToList"),
-           let favorites = try? JSONDecoder().decode([ListModel].self, from: data) {
-            self.presentList(response: favorites)
-        } else {
-            self.didFinishLoadWithError?("Favorites can not load")
-        }
+        let items = taskManager.get()
+        self.list = items.map { TaskListCell.ViewModel(toDo: $0.toDo, data: $0) }
+        didFinishLoad?()
     }
     
-    
-    func presentList(response: [ListModel]) {
-        let viewModel: [TaskListCell.ViewModel] = response.map { list in
-            TaskListCell.ViewModel(response: list)
-        }
-        self.list = viewModel
-        self.didFinishLoad?()
+    func removeItem(at index: Int) {
+        guard index >= 0, index < list.count else { return }
+        let item = list[index].data
+        taskManager.remove(toDo: item)
+        list.remove(at: index)
+        didFinishLoad?()
     }
-
 }
+
