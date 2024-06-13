@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Fs8-lp-p2H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7iL-PJ-vlk">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="k86-Cx-j6B">
-                                <rect key="frame" x="0.0" y="92" width="414" height="804"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="listCell" rowHeight="64" id="TQi-Ho-xlR" customClass="TaskListCell" customModule="ToDoList" customModuleProvider="target">
                                         <rect key="frame" x="20" y="55.5" width="374" height="64"/>
@@ -73,10 +73,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="k86-Cx-j6B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gPU-8O-BE6"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="k86-Cx-j6B" secondAttribute="bottom" constant="-34" id="jha-6W-XNl"/>
-                            <constraint firstItem="k86-Cx-j6B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qnP-re-UfQ"/>
-                            <constraint firstItem="k86-Cx-j6B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="s39-B1-s0T"/>
+                            <constraint firstItem="k86-Cx-j6B" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ZdO-Vt-YoR"/>
+                            <constraint firstItem="k86-Cx-j6B" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="av3-f5-9d9"/>
+                            <constraint firstItem="k86-Cx-j6B" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bpd-cf-Adg"/>
+                            <constraint firstItem="k86-Cx-j6B" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mkg-sE-F8V"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="To Do List" id="eUR-52-gqF">
@@ -94,9 +94,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="3.3482142857142856"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="3.3482142857142856"/>
         </scene>
-        <!--Add TaskVC-->
+        <!--Add Task-->
         <scene sceneID="bhJ-NB-47G">
             <objects>
                 <viewController id="o8T-7k-cZI" customClass="AddTaskVC" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,7 +141,7 @@
                             <constraint firstItem="fLy-23-F3w" firstAttribute="centerY" secondItem="RzC-KC-zJt" secondAttribute="centerY" id="z18-AF-58f"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="RJw-qE-aHd"/>
+                    <navigationItem key="navigationItem" title="Add Task" id="RJw-qE-aHd"/>
                     <connections>
                         <outlet property="addTextField" destination="fLy-23-F3w" id="uek-el-FBU"/>
                         <outlet property="saveButton" destination="RzC-KC-zJt" id="XL2-5S-X2Q"/>
@@ -149,12 +149,74 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02o-uQ-SX8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1913.0434782608697" y="2.6785714285714284"/>
+            <point key="canvasLocation" x="2823.1884057971015" y="2.6785714285714284"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Task Done-->
+        <scene sceneID="YFM-ee-Ob8">
+            <objects>
+                <viewController id="wAt-3J-9u1" customClass="DeletedTasksVC" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iT6-9u-ush">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="sml-fb-cGK">
+                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DeletedTaskCell" rowHeight="66" id="ms5-a3-Iqc" customClass="DeletedTaskCell" customModule="ToDoList" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.5" width="374" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ms5-a3-Iqc" id="t45-8t-oqF">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nD6-lA-PDa">
+                                                    <rect key="frame" x="8" y="11" width="311" height="42"/>
+                                                    <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nD6-lA-PDa" firstAttribute="top" secondItem="t45-8t-oqF" secondAttribute="top" constant="11" id="BeM-Ez-7fi"/>
+                                                <constraint firstAttribute="trailing" secondItem="nD6-lA-PDa" secondAttribute="trailing" constant="55" id="G7b-jl-qmQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="nD6-lA-PDa" secondAttribute="bottom" constant="13" id="M85-ww-B29"/>
+                                                <constraint firstItem="nD6-lA-PDa" firstAttribute="leading" secondItem="t45-8t-oqF" secondAttribute="leading" constant="8" id="m5d-Id-yl5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="deletedTaskLabel" destination="nD6-lA-PDa" id="MJh-Fb-eFV"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zuP-eo-Deo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sml-fb-cGK" firstAttribute="trailing" secondItem="zuP-eo-Deo" secondAttribute="trailing" id="KGO-R8-351"/>
+                            <constraint firstItem="sml-fb-cGK" firstAttribute="leading" secondItem="zuP-eo-Deo" secondAttribute="leading" id="Nsx-Zl-JNn"/>
+                            <constraint firstItem="sml-fb-cGK" firstAttribute="top" secondItem="zuP-eo-Deo" secondAttribute="top" id="XN7-Y1-3N3"/>
+                            <constraint firstItem="sml-fb-cGK" firstAttribute="bottom" secondItem="zuP-eo-Deo" secondAttribute="bottom" id="bZe-Zh-nzz"/>
+                            <constraint firstItem="sml-fb-cGK" firstAttribute="leading" secondItem="zuP-eo-Deo" secondAttribute="leading" id="f3r-Cx-nJc"/>
+                            <constraint firstItem="sml-fb-cGK" firstAttribute="top" secondItem="zuP-eo-Deo" secondAttribute="top" id="uzN-ok-x3b"/>
+                            <constraint firstItem="zuP-eo-Deo" firstAttribute="bottom" secondItem="sml-fb-cGK" secondAttribute="bottom" id="wmE-lK-OEd"/>
+                            <constraint firstItem="zuP-eo-Deo" firstAttribute="trailing" secondItem="sml-fb-cGK" secondAttribute="trailing" id="ydK-qO-xUi"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Task Done" id="rvI-f8-qVN"/>
+                    <connections>
+                        <outlet property="tableView" destination="sml-fb-cGK" id="ieG-BL-yi5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6JO-bi-CWv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="728.57142857142856"/>
+        </scene>
+        <!--Task-->
         <scene sceneID="7Nz-L3-slb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fs8-lp-p2H" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Task" image="hourglass" catalog="system" selectedImage="hourglass" id="upN-gx-Ciz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P9h-2J-xyY">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
@@ -172,10 +234,60 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPY-4d-fez" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="3.3482142857142856"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="IlU-MD-5vu">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="7iL-PJ-vlk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a3A-qj-Fgt">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemOrangeColor"/>
+                        <color key="selectedImageTintColor" systemColor="systemOrangeColor"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Fs8-lp-p2H" kind="relationship" relationship="viewControllers" id="yDa-5m-hzI"/>
+                        <segue destination="djj-hr-Ior" kind="relationship" relationship="viewControllers" id="sHQ-vP-usp"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kfj-UE-t72" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="137.68115942028987" y="3.3482142857142856"/>
+        </scene>
+        <!--Done-->
+        <scene sceneID="18O-QU-DzO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="djj-hr-Ior" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Done" image="checkmark.circle.fill" selectedImage="checkmark.circle.fill" catalog="system" id="p9a-cH-UaL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="47S-oT-87q">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="30"/>
+                            <color key="textColor" systemColor="systemOrangeColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" systemColor="systemOrangeColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wAt-3J-9u1" kind="relationship" relationship="rootViewController" id="QI3-FQ-XiU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1zx-P2-tEr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="728.57142857142856"/>
         </scene>
     </scenes>
     <resources>
+        <image name="checkmark.circle.fill" width="128" height="128"/>
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="hourglass" catalog="system" width="103" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -18,6 +18,8 @@
 		108854162B0533A800E58A07 /* TaskListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108854152B0533A800E58A07 /* TaskListManager.swift */; };
 		108854182B053BE600E58A07 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108854172B053BE600E58A07 /* Model.swift */; };
 		10915F2E2B094D5500EBC5F5 /* TaskViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10915F2D2B094D5500EBC5F5 /* TaskViewModel.swift */; };
+		10AEA2302C1B705100353BB1 /* DeletedTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AEA22F2C1B705100353BB1 /* DeletedTaskViewController.swift */; };
+		10AEA2342C1B740100353BB1 /* DeletedTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10AEA2332C1B740100353BB1 /* DeletedTaskCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		108854152B0533A800E58A07 /* TaskListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListManager.swift; sourceTree = "<group>"; };
 		108854172B053BE600E58A07 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		10915F2D2B094D5500EBC5F5 /* TaskViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewModel.swift; sourceTree = "<group>"; };
+		10AEA22F2C1B705100353BB1 /* DeletedTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletedTaskViewController.swift; sourceTree = "<group>"; };
+		10AEA2332C1B740100353BB1 /* DeletedTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletedTaskCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,8 +71,10 @@
 			isa = PBXGroup;
 			children = (
 				108853FD2B052EA100E58A07 /* AppDelegate.swift */,
+				10AEA2332C1B740100353BB1 /* DeletedTaskCell.swift */,
 				108853FF2B052EA100E58A07 /* SceneDelegate.swift */,
 				108854172B053BE600E58A07 /* Model.swift */,
+				10AEA22F2C1B705100353BB1 /* DeletedTaskViewController.swift */,
 				108854012B052EA100E58A07 /* TaskListVC.swift */,
 				108854152B0533A800E58A07 /* TaskListManager.swift */,
 				108854112B05326200E58A07 /* TaskListCell.swift */,
@@ -157,8 +163,10 @@
 				108854022B052EA100E58A07 /* TaskListVC.swift in Sources */,
 				108854122B05326200E58A07 /* TaskListCell.swift in Sources */,
 				108853FE2B052EA100E58A07 /* AppDelegate.swift in Sources */,
+				10AEA2342C1B740100353BB1 /* DeletedTaskCell.swift in Sources */,
 				108854162B0533A800E58A07 /* TaskListManager.swift in Sources */,
 				108854002B052EA100E58A07 /* SceneDelegate.swift in Sources */,
+				10AEA2302C1B705100353BB1 /* DeletedTaskViewController.swift in Sources */,
 				10915F2E2B094D5500EBC5F5 /* TaskViewModel.swift in Sources */,
 				108854142B05327400E58A07 /* AddTaskVC.swift in Sources */,
 			);

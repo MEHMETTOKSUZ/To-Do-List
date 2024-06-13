@@ -38,24 +38,25 @@ class TaskListVC: UIViewController {
     }
     
     func showDeleteConfirmationAlert(for data: ListModel, at indexPath: IndexPath) {
-            let alert = UIAlertController(
-                title: "Delete Task",
-                message: "Are you sure you want to delete this task?",
-                preferredStyle: .alert
-            )
-            
-            let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
-                self?.viewModel.removeItem(at: indexPath.row)
-                self?.tableView.deleteRows(at: [indexPath], with: .fade)
-            }
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            
-            alert.addAction(deleteAction)
-            alert.addAction(cancelAction)
-            
-            present(alert, animated: true, completion: nil)
+        let alert = UIAlertController(
+            title: "Delete Task",
+            message: "Are you sure you want to delete this task?",
+            preferredStyle: .alert
+        )
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] _ in
+            self?.viewModel.removeItem(at: indexPath.row)
+            self?.tableView.deleteRows(at: [indexPath], with: .fade)
         }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+
 }
 
 extension TaskListVC: UITableViewDataSource {
